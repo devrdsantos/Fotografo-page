@@ -1,0 +1,24 @@
+/*  TENGO ESTO HECHO PARA DARLE ESTILOS A TRAVES DE JQUERY PERO HABIA UNOS SEGUNDOS EN LOS QUE SE CARGABA MAL LA IMAGEN, POR ESO HE DECIDIDO AÑADIR UNA HOJA DE ESTILOS PARA DARLE CSS CUANDO CARGUE LA PAGINA, SRY. */
+
+#mainImage {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.imagen-peque {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s; 
+}
+
+.imagen-peque:hover {
+    transform: scale(1.1); 
+}
+
+.imagen-peque:not(:hover) {
+    transform: scale(1);
+}

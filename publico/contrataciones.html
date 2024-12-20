@@ -5,9 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contrataciones</title>
     <!--CDN STYLES BOOTSTRAP-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark">
+    <!--NAVBAR-->
+    <nav class="bg-black navbar navbar-expand shadow-lg p-3 rounded-bottom">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                <a class="nav-link active text-light" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="galeria.html">Galeria</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="contrataciones.html">Contrataciones</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+      <section class="bg-dark py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 text-white">Formulario de Contratación</h2>
+            <!-- Formulario responsivo -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <form id="eventForm" class="needs-validation" novalidate>
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label text-white">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre" required>
+                            <div class="invalid-feedback">El nombre no puede contener números.</div>
+                        </div>
+    
+                        <!-- Apellidos -->
+                        <div class="mb-3">
+                            <label for="apellidos" class="form-label text-white">Apellidos</label>
+                            <input type="text" id="apellidos" class="form-control" placeholder="Escribe tus apellidos" required>
+                            <div class="invalid-feedback">Introduce al menos dos palabras sin números.</div>
+                        </div>
+    
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-white">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Escribe tu email" required>
+                            <div class="invalid-feedback">Introduce un email válido.</div>
+                        </div>
+    
+                        <!-- Telefono -->
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label text-white">Teléfono</label>
+                            <input type="text" id="telefono" class="form-control" placeholder="Escribe tu teléfono" required>
+                            <div class="invalid-feedback">El teléfono debe tener 9 dígitos numéricos.</div>
+                        </div>
+    
+                        <!-- Tipo de Evento -->
+                        <div class="mb-3">
+                            <label for="tipoEvento" class="form-label text-white">Tipo de Evento</label>
+                            <select id="tipoEvento" class="form-select" required>
+                                <option value="" selected disabled>Selecciona un tipo de evento</option>
+                                <option value="bautizo">Bautizo</option>
+                                <option value="comunion">Comunión</option>
+                                <option value="boda">Boda</option>
+                                <option value="fiesta">Fiesta</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <div class="invalid-feedback">Selecciona un tipo de evento.</div>
+                        </div>
+    
+                        <!-- Especificar Otro -->
+                        <div id="especificarOtro" class="mb-3 d-none">
+                            <label for="otroEvento" class="form-label text-white">Especifica el tipo de evento</label>
+                            <input type="text" id="otroEvento" class="form-control" placeholder="Describe tu evento">
+                        </div>
+    
+                        <!-- Lugar -->
+                        <div class="mb-3">
+                            <label for="lugar" class="form-label text-white">Lugar</label>
+                            <input type="text" id="lugar" class="form-control" placeholder="Escribe el lugar del evento" required>
+                            <div class="invalid-feedback">Introduce un lugar válido.</div>
+                        </div>
+    
+                        <!-- Fecha -->
+                        <div class="mb-3">
+                            <label for="fecha" class="form-label text-white">Fecha</label>
+                            <input type="date" id="fecha" class="form-control" required>
+                            <div class="invalid-feedback">Selecciona una fecha válida.</div>
+                        </div>
+    
+                        <!-- Boton Enviar -->
+                        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-light py-3 sticky-bottom">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Juan Gómez. Todos los derechos reservados.</p>
+            <a id="privado" class="text-light">Privado</a>
+        </div>
+    </footer>
+
+    <!-- Dialog para ingresar a la seccion privada -->
+    <dialog id="passwordDialog" class="p-4 shadow rounded">
+        <form method="dialog" class="text-center">
+            <h5 class="mb-3">Ingresa la contraseña</h5>
+            <input type="password" id="passwordInput" class="form-control mb-3" placeholder="Contraseña">
+            <div>
+                <button type="button" id="submitPassword" class="btn btn-primary">Acceder</button>
+                <button type="button" id="closeDialog" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+    
+    
     
 
 
@@ -16,5 +136,7 @@
 
     <!--CDN JS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script src="../scripts/main.js" type="module"></script>
 </body>
 </html>

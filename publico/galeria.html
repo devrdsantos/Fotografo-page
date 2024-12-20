@@ -5,9 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria</title>
     <!--CDN STYLES BOOTSTRAP-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
-<body>
+<body class="bg-dark">
+    <!--NAVBAR-->
+    <nav class="bg-black navbar navbar-expand shadow-lg p-3 rounded-bottom">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!--
+                <li class="nav-item">
+                    <img src="../assets/photographer2.jpg" class="w-25 rounded" alt="gif del lente">
+                </li>
+                -->
+              <li class="nav-item ">
+                <a class="nav-link active text-light" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="galeria.html">Galeria</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="contrataciones.html">Contrataciones</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- <h1 class="text-white">Galeria de imagenes</h1> -->
+    <section class="bg-dark py-5">
+        <div class="container text-center">
+            <!-- Imagen Principal -->
+            <!-- añado estilos en linea para darle un tamaño fijo a la imagen, lo he estado convirtiendo desde jquery pero no consigo que no se muestre la imagen en un tamaño no deseado antes de que el documento este listo para modificarlo desde jquery -->
+            <div id="mainImageContainer" class="mb-4">
+                <img id="mainImage" 
+                src="../assets/boda.jpg" 
+                alt="Imagen principal" 
+                class="img-fluid rounded shadow-lg">
+            </div>
+            <!-- Lista de Imágenes -->
+            <div id="galleryContainer" class="d-flex flex-column flex-md-row gap-2 p-2 overflow-auto mb-5 pb-4">
+                <div class="flex-shrink-0">
+                    <img src="../assets/boda.jpg" alt="Imagen 1" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/boda2.jpg" alt="Imagen 2" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/plata.jpg" alt="Imagen 3" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/mujer.jpg" alt="Imagen 4" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/rojo.jpg" alt="Imagen 5" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/rio.jpg" alt="Imagen 6" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/cabaña.jpg" alt="Imagen 7" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/palermo.jpg" alt="Imagen 8" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/chile.jpg" alt="Imagen 9" class="img-thumbnail imagen-peque">
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="../assets/baires.jpg" alt="Imagen 10" class="img-thumbnail imagen-peque">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-light py-3 fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Juan Gómez. Todos los derechos reservados.</p>
+            <a id="privado" class="text-light">Privado</a>
+        </div>
+    </footer>
+
+    <!-- Dialog para ingresar a la seccion privada -->
+    <dialog id="passwordDialog" class="p-4 shadow rounded">
+        <form method="dialog" class="text-center">
+            <h5 class="mb-3">Ingresa la contraseña</h5>
+            <input type="password" id="passwordInput" class="form-control mb-3" placeholder="Contraseña">
+            <div>
+                <button type="button" id="submitPassword" class="btn btn-primary">Acceder</button>
+                <button type="button" id="closeDialog" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </dialog>
+    
+    
     
 
 
@@ -16,5 +108,6 @@
 
     <!--CDN JS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../scripts/main.js" type="module"></script>
 </body>
 </html>
